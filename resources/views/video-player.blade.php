@@ -12,7 +12,7 @@
     :state-path="$getStatePath()">
 
     <video
-        controls 
+        controls
         class="js-player"
         crossorigin
         playsinline>
