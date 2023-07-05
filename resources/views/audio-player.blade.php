@@ -1,4 +1,5 @@
-<x-dynamic-component :component="$getFieldWrapperView()"
+<x-dynamic-component wire:ignore
+    :component="$getFieldWrapperView()"
     :id="$getId()"
     :label="$getLabel()"
     :label-sr-only="$isLabelHidden()"
