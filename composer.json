@@ -1,0 +1,50 @@
+{
+    "name": "aymanalhattami/filament-audio-video-player",
+    "description": "Filament Audio Video Player",
+    "keywords": [
+        "aymanalhattami",
+        "filament-audio-video-player"
+    ],
+    "homepage": "https://github.com/aymanalhattami/filament-audio-video-player",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ayman Alhattami",
+            "email": "ayman.m.alhattami@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "filament/filament": "^2.0|^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AymanAlhattami\\FilamentAudioVideoPlayer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AymanAlhattami\\FilamentAudioVideoPlayer\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AymanAlhattami\\FilamentAudioVideoPlayer\\FilamentAudioVideoPlayerServiceProvider"
+            ]
+        }
+    }
+}
