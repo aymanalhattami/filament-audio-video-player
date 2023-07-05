@@ -2,59 +2,29 @@
 
 namespace AymanAlhattami\FilamentAudioVideoPlayer;
 
-use Illuminate\Support\ServiceProvider;
+use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\Package;
 
-class FilamentAudioVideoPlayerServiceProvider extends ServiceProvider
+class FilamentAudioVideoPlayerServiceProvider extends PluginServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
-    public function boot()
+    public function configurePackage(Package $package): void
     {
-        /*
-         * Optional methods to load your package assets
-         */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'filament-audio-video-player');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'filament-audio-video-player');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('filament-audio-video-player.php'),
-            ], 'config');
-
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/filament-audio-video-player'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/filament-audio-video-player'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/filament-audio-video-player'),
-            ], 'lang');*/
-
-            // Registering package commands.
-            // $this->commands([]);
-        }
+        $package->name('filament-audio-video-player')
+            ->hasViews()
+            ->hasConfigFile();
     }
 
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
-        // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'filament-audio-video-player');
+    // protected function getScripts(): array
+    // {
+    //     return [
+    //         'filament-audio-video-player' => config('filament-audio-video-player.javascript'),
+    //     ];
+    // }
 
-        // Register the main class to use with the facade
-        $this->app->singleton('filament-audio-video-player', function () {
-            return new FilamentAudioVideoPlayer;
-        });
-    }
+    // protected function getStyles(): array
+    // {
+    //     return [
+    //         'filament-audio-video-player' => config('filament-audio-video-player.css'),
+    //     ];
+    // }
 }
