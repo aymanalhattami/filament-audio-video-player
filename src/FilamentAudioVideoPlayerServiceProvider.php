@@ -2,6 +2,8 @@
 
 namespace AymanAlhattami\FilamentAudioVideoPlayer;
 
+use Filament\Facades\Filament;
+use Illuminate\Support\HtmlString;
 use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 
@@ -14,17 +16,25 @@ class FilamentAudioVideoPlayerServiceProvider extends PluginServiceProvider
             ->hasConfigFile();
     }
 
-    // protected function getScripts(): array
-    // {
-    //     return [
-    //         'filament-audio-video-player' => config('filament-audio-video-player.javascript'),
-    //     ];
-    // }
+    public function packageBooted(): void
+    {
+        parent::packageBooted();
 
-    // protected function getStyles(): array
-    // {
-    //     return [
-    //         'filament-audio-video-player' => config('filament-audio-video-player.css'),
-    //     ];
-    // }
+        Filament::registerRenderHook(
+            name: 'styles.end',
+            callback: fn () => new HtmlString(html: "
+                <link rel='stylesheet' href='https://cdn.plyr.io/3.7.8/plyr.css' />
+            ")
+        );
+
+        Filament::registerRenderHook(
+            name: 'scripts.end',
+            callback: fn () => new HtmlString(html: "
+                <script src='https://cdn.plyr.io/3.7.8/plyr.polyfilled.js'></script>
+                <script>
+                    Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
+                </script>
+            ")
+        );
+    }
 }

@@ -10,11 +10,12 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <video controls
+    <video
+        controls 
+        class="js-player"
         crossorigin
         playsinline>
         <source src="{{ $mediaLink }}"
             type="video/mp4">
     </video>
-
 </x-dynamic-component>

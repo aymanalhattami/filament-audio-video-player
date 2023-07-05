@@ -10,10 +10,9 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <audio id="player"
+    <audio class="js-player"
         controls>
         <source src="{{ $mediaLink }}"
             type="audio/mp3" />
     </audio>
-
 </x-dynamic-component>
