@@ -12,7 +12,7 @@
     :state-path="$getStatePath()">
 
     <audio style="
-        --plyr-color-main: #eab308"
+        --plyr-color-main: {{ config('filament-audio-video-player.primary_color') }}"
         class="js-player"
         controls>
         <source src="{{ $mediaLink }}"

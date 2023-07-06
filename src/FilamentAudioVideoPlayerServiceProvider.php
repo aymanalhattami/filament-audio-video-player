@@ -12,7 +12,8 @@ class FilamentAudioVideoPlayerServiceProvider extends PluginServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name('filament-audio-video-player')
-            ->hasViews();
+            ->hasViews()
+            ->hasConfigFile();
     }
 
     public function packageBooted(): void

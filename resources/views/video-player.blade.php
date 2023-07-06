@@ -12,7 +12,7 @@
     :state-path="$getStatePath()">
 
     <video style="
-        --plyr-color-main: #eab308"
+        --plyr-color-main: {{ config('filament-audio-video-player.primary_color') }}"
         controls
         class="js-player"
         crossorigin

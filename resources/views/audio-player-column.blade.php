@@ -1,7 +1,8 @@
 <audio style="
-        --plyr-color-main: #eab308"
+        --plyr-color-main: {{ config('filament-audio-video-player.primary_color') }}"
     data-plyr-config='{ 
-    "settings": []}'
+    "settings": []
+    }'
     class="js-player"
     controls>
     <source src="{{ $getState() }}"
