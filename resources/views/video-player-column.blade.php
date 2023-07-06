@@ -1,7 +1,12 @@
-<video controls
-    class="js-player" width="9" height="16"
-    crossorigin
-    playsinline>
+<video style="
+        --plyr-color-main: #eab308"
+    data-plyr-config='{ 
+        "ratio": "5:3",
+        "controls": ["play", "mute", "volume"]
+    }'
+    class="js-player"
+    playsinline
+    controls>
     <source src="{{ $getState() }}"
         type="video/mp4">
 </video>

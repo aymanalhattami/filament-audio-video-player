@@ -11,7 +11,8 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <video
+    <video style="
+        --plyr-color-main: #eab308"
         controls
         class="js-player"
         crossorigin

@@ -11,7 +11,9 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <audio class="js-player"
+    <audio style="
+        --plyr-color-main: #eab308"
+        class="js-player"
         controls>
         <source src="{{ $mediaLink }}"
             type="audio/mp3" />
