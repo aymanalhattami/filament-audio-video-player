@@ -2,9 +2,7 @@
 
 namespace AymanAlhattami\FilamentAudioVideoPlayer;
 
-use Filament\Tables\Columns\Column;
-
-class VideoPlayerColumn extends Column
+class VideoPlayerColumn extends BaseAudioVideoPlayerColumn
 {
     protected string $view = 'filament-audio-video-player::video-player-column';
 }
