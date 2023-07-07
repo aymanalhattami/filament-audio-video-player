@@ -12,7 +12,11 @@
     :state-path="$getStatePath()">
 
     <video style="
-        --plyr-color-main: {{ config('filament-audio-video-player.primary_color') }}"
+        --plyr-color-main: {{ $getColor() }};"
+        data-plyr-config='{ 
+            "title": "Example Title",
+            "ratio": {{ $getRatio() }}
+         }'
         controls
         class="js-player"
         crossorigin
