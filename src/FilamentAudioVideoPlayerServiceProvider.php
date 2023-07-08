@@ -39,19 +39,4 @@ class FilamentAudioVideoPlayerServiceProvider extends PluginServiceProvider
             ")
         );
     }
-
-    // protected function getStyles(): array
-    // {
-    //     return [
-    //         static::$name => dd(config('filament.audio.video.player.css')),
-    //     ];
-    // }
-
-    // protected function getScripts(): array
-    // {
-    //     return [
-    //         static::$name => config('filament.audio.video.player.javascript'),
-    //         static::$name . ".custom" => "<script>Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));</script>",
-    //     ];
-    // }
 }

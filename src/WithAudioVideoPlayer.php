@@ -6,25 +6,8 @@ use Illuminate\Support\Str;
 
 trait WithAudioVideoPlayer
 {
-    protected ?string $color = null;
     protected array $css = [];
     protected array $config = [];
-
-    public function setColor(string $color): static
-    {
-        $this->color = $color;
-
-        return $this;
-    }
-
-    public function getColor(): string
-    {
-        if (is_null($this->color)) {
-            $this->color = config('filament-audio-video-player.primary_color');
-        }
-
-        return $this->color;
-    }
 
     public function setCss(array $css): static
     {
@@ -35,6 +18,10 @@ trait WithAudioVideoPlayer
 
     public function getCss(): array
     {
+        if(!array_key_exists('--plyr-color-main', $this->css)){
+            $this->css['--plyr-color-main'] = config('filament-audio-video-player.color');
+        }
+
         return $this->css;
     }
 

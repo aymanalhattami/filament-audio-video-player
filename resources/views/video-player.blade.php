@@ -11,12 +11,8 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <video style="
-        {{ $getCssForBlade() }}
-        "
-        data-plyr-config='{ 
-            "title": "Example Title"
-         }'
+    <video style="{{ $getCssForBlade() }}"
+        data-plyr-config='{}'
         controls
         class="js-player"
         crossorigin

@@ -1,5 +1,4 @@
-<audio style="
-        --plyr-color-main: {{ config('filament-audio-video-player.primary_color') }}"
+<audio style="{{ $getCssForBlade() }}"
     data-plyr-config='{ 
     "settings": []
     }'
