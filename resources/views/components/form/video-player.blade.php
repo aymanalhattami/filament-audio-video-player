@@ -12,7 +12,9 @@
     :state-path="$getStatePath()">
 
     <video style="{{ $getCssForBlade() }}"
-        data-plyr-config='{}'
+        data-plyr-config='{
+            {{ $getConfigForBlade() }}
+        }'
         controls
         class="js-player"
         crossorigin

@@ -1,6 +1,6 @@
 <audio style="{{ $getCssForBlade() }}"
-    data-plyr-config='{ 
-    "settings": []
+    data-plyr-config='{
+        {{ $getConfigForBlade() }}
     }'
     class="js-player"
     controls>

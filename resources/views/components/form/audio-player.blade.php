@@ -12,6 +12,9 @@
     :state-path="$getStatePath()">
 
     <audio style="{{ $getCssForBlade() }}"
+        data-plyr-config='{
+            {{ $getConfigForBlade() }}
+        }'
         class="js-player"
         controls>
         <source src="{{ $mediaLink }}"

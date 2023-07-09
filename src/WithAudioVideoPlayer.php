@@ -18,7 +18,7 @@ trait WithAudioVideoPlayer
 
     public function getCss(): array
     {
-        if(!array_key_exists('--plyr-color-main', $this->css)){
+        if (!array_key_exists('--plyr-color-main', $this->css)) {
             $this->css['--plyr-color-main'] = config('filament-audio-video-player.color');
         }
 
@@ -29,7 +29,7 @@ trait WithAudioVideoPlayer
     {
         $css = '';
 
-        foreach($this->getCss() as $key => $value){
+        foreach ($this->getCss() as $key => $value) {
             $css .= Str::of($css)->append($key . ": " . $value . ';');
         }
 
@@ -47,17 +47,37 @@ trait WithAudioVideoPlayer
     {
         return $this->config;
     }
-    
+
     public function getConfigForBlade(): string
     {
         $config = '';
 
-        foreach($this->getConfig() as $key => $value){
-            $config .= Str::of($config)->append('"' . $key . '"' . ': "' . $value . '",');
+        foreach ($this->getConfig() as $key => $value) {
+            if (is_string($value)) {
+                $config .= Str::of($config)->append('"' . $key . '"' . ': "' . $value . '",');
+            } elseif (is_array($value)) {
+                $string = '';
+                if(count($value)){
+                    foreach($value as $innerKey => $innerValue){
+                        if(is_string($innerValue)){
+                            $string .= '"' . $innerValue . '"';
+                        }else{
+                            $string .= $innerValue;
+                        }
+                    }
+                }
+                $config .= Str::of($config)->append('"' . $key . '"' . ': [' . $string . '],');
+            } elseif (is_bool($value)) {
+                if ($value) {
+                    $config .= Str::of($config)->append('"' . $key . '"' . ': ' . true . ',');
+                } else {
+                    $config .= Str::of($config)->append('"' . $key . '"' . ': ' . 0 . ',');
+                }
+            } else {
+                $config .= Str::of($config)->append('"' . $key . '"' . ': ' . $value . ',');
+            }
         }
 
-        info($config);
-
-        return $config;
+        return trim($config, ',');
     }
 }

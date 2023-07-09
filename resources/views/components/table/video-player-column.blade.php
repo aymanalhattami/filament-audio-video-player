@@ -1,7 +1,6 @@
 <video style="{{ $getCssForBlade() }}"
-    data-plyr-config='{ 
-        "ratio": "5:3",
-        "controls": ["play", "mute", "volume"]
+    data-plyr-config='{
+        {{ $getConfigForBlade() }}
     }'
     class="js-player"
     playsinline
