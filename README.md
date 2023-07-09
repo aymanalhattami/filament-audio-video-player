@@ -1,10 +1,9 @@
-# Very short description of the package
+# Filament Audio Video Player
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/aymanalhattami/filament-audio-video-player.svg?style=flat-square)](https://packagist.org/packages/aymanalhattami/filament-audio-video-player)
 [![Total Downloads](https://img.shields.io/packagist/dt/aymanalhattami/filament-audio-video-player.svg?style=flat-square)](https://packagist.org/packages/aymanalhattami/filament-audio-video-player)
-![GitHub Actions](https://github.com/aymanalhattami/filament-audio-video-player/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Filament Audio Video Player using [plyr JavaScript library]( https://github.com/sampotts/plyr)
 
 ## Installation
 
