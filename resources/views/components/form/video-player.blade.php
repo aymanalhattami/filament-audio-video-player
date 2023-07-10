@@ -11,9 +11,9 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <video style="{{ $getCssForBlade() }}"
+    <video style="{{ $getCssAsString() }}"
         data-plyr-config='{
-            {{ $getConfigForBlade() }}
+            {{ $getConfigAsString() }}
         }'
         controls
         class="js-player"

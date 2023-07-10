@@ -11,9 +11,9 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <audio style="{{ $getCssForBlade() }}"
+    <audio style="{{ $getCssAsString() }}"
         data-plyr-config='{
-            {{ $getConfigForBlade() }}
+            {{ $getConfigAsString() }}
         }'
         class="js-player"
         controls>

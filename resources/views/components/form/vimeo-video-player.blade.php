@@ -11,9 +11,9 @@
     :required="$isRequired()"
     :state-path="$getStatePath()">
 
-    <div style="{{ $getCssForBlade() }}"
+    <div style="{{ $getCssAsString() }}"
         data-plyr-config='{
-            {{ $getConfigForBlade() }}
+            {{ $getConfigAsString() }}
         }'
         class="plyr__video-embed js-player">
         <iframe style="position: unset;"

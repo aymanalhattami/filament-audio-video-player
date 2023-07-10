@@ -1,6 +1,6 @@
-<video style="{{ $getCssForBlade() }}"
+<video style="{{ $getCssAsString() }}"
     data-plyr-config='{
-        {{ $getConfigForBlade() }}
+        {{ $getConfigAsString() }}
     }'
     class="js-player"
     playsinline

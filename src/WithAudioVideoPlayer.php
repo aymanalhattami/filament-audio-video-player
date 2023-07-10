@@ -25,7 +25,7 @@ trait WithAudioVideoPlayer
         return $this->css;
     }
 
-    public function getCssForBlade(): string
+    public function getCssAsString(): string
     {
         $css = '';
 
@@ -48,7 +48,7 @@ trait WithAudioVideoPlayer
         return $this->config;
     }
 
-    public function getConfigForBlade(): string
+    public function getConfigAsString(): string
     {
         $config = '';
 
