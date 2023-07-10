@@ -15,14 +15,49 @@ composer require aymanalhattami/filament-audio-video-player
 
 ## Usage
 
+### Form Fields
 ```php
-// Usage description here
+use Filament\Resources\Form;
+use AymanAlhattami\FilamentAudioVideoPlayer\Form\VideoPlayer;
+use AymanAlhattami\FilamentAudioVideoPlayer\Form\AudioPlayer;
+use AymanAlhattami\FilamentAudioVideoPlayer\Form\YoutubeVideoPlayer;
+use AymanAlhattami\FilamentAudioVideoPlayer\Form\ViemoVideoPlayer;
+
+public static function form(Form $form): Form
+{
+    return $form
+        ->schema([
+            // ...
+            VideoPlayer::make('video_url'),
+            AudioPlayer::make('audio_url'),
+            YoutubeVideoPlayer::make('youtube_video_url'),
+            VimeoVideoPlayer::make('vimeo_video_url'),
+            // ...
+        ]);
+}
 ```
 
-### Testing
+### Table Column
+```php
+use Filament\Resources\Table;
+use AymanAlhattami\FilamentAudioVideoPlayer\Table\VideoPlayerColumn;
+use AymanAlhattami\FilamentAudioVideoPlayer\Table\AudioPlayerColumn;
+use AymanAlhattami\FilamentAudioVideoPlayer\Table\YoutubeVideoPlayerColumn;
+use AymanAlhattami\FilamentAudioVideoPlayer\Table\VimeoVideoPlayerColumn;
 
-```bash
-composer test
+public static function table(Table $table): Table
+{
+    return $table
+        ->columns([
+            //...
+            VideoVideoPlayerColumnPlayer::make('video_url'),
+            AudioPlayerColumn::make('audio_url'),
+            YoutubeVideoPlayerColumn::make('youtube_video_url'),
+            VimeoVideoPlayerColumn::make('vimeo_video_url'),
+            //...
+        ])
+        // ...
+}
 ```
 
 ### Changelog
