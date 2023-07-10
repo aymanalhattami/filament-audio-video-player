@@ -19,7 +19,7 @@
         class="js-player"
         crossorigin
         playsinline>
-        <source src="{{ $mediaLink }}"
+        <source src="{{ $getState() }}"
             type="video/mp4">
     </video>
 </x-dynamic-component>

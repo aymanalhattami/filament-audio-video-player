@@ -17,7 +17,7 @@
         }'
         class="js-player"
         controls>
-        <source src="{{ $mediaLink }}"
+        <source src="{{ $getState() }}"
             type="audio/mp3" />
     </audio>
 </x-dynamic-component>

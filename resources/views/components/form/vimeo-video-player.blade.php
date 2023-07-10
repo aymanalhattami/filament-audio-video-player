@@ -17,7 +17,7 @@
         }'
         class="plyr__video-embed js-player">
         <iframe style="position: unset;"
-            src="{{ $mediaLink }}"
+            src="{{ $getState() }}"
             allowfullscreen
             allowtransparency
             allow="autoplay"></iframe>
