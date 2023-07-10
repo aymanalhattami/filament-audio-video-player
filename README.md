@@ -9,6 +9,7 @@ Filament Audio Video Player using [plyr]( https://github.com/sampotts/plyr) Java
 
 You can install the package via composer:
 
+
 ```bash
 composer require aymanalhattami/filament-audio-video-player
 ```
@@ -16,6 +17,9 @@ composer require aymanalhattami/filament-audio-video-player
 ## Usage
 
 ### Form Fields
+
+![](./images/filament-audio-video-player.png)
+
 ```php
 use Filament\Resources\Form;
 use AymanAlhattami\FilamentAudioVideoPlayer\Form\VideoPlayer;
@@ -38,7 +42,10 @@ public static function form(Form $form): Form
 // ...
 ```
 
-### Table Column
+### Table Columns
+
+![](./images/filament-audio-video-player-columns.png)
+
 ```php
 use Filament\Resources\Table;
 use AymanAlhattami\FilamentAudioVideoPlayer\Table\VideoPlayerColumn;
@@ -51,7 +58,7 @@ public static function table(Table $table): Table
     return $table
         ->columns([
             // ...
-            VideoVideoPlayerColumnPlayer::make('video_url'),
+            VideoPlayerColumn::make('video_url'),
             AudioPlayerColumn::make('audio_url'),
             YoutubeVideoPlayerColumn::make('youtube_video_url'),
             VimeoVideoPlayerColumn::make('vimeo_video_url'),
@@ -67,7 +74,8 @@ If you want to change any design of the player, you can do so using [plyr CSS cu
 ```php
 VideoPlayer::make('video_url')
     ->setCss([
-        '--plyr-color-main' => '#eab308'
+        '--plyr-color-main' => '#eab308',
+        // ..
     ])
 ```
 
@@ -75,8 +83,9 @@ If you want to set any configuration for the player, you can do so using [plyr o
 ```php
 VideoPlayer::make('video_url')
     ->setOptions([
-        "settings" => [],
-        'controls' => ['play-large', 'play', 'fullscreen']
+        "ratio" => "16:9",
+        'controls' => ['play-large', 'play', 'fullscreen'],
+        // ..
     ])
 ```
 
