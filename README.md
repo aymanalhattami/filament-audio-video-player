@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/aymanalhattami/filament-audio-video-player.svg?style=flat-square)](https://packagist.org/packages/aymanalhattami/filament-audio-video-player)
 [![Total Downloads](https://img.shields.io/packagist/dt/aymanalhattami/filament-audio-video-player.svg?style=flat-square)](https://packagist.org/packages/aymanalhattami/filament-audio-video-player)
 
-Filament Audio Video Player using [plyr JavaScript library]( https://github.com/sampotts/plyr)
+Filament Audio Video Player using [plyr]( https://github.com/sampotts/plyr) JavaScript library
 
 ## Installation
 
@@ -22,7 +22,7 @@ use AymanAlhattami\FilamentAudioVideoPlayer\Form\VideoPlayer;
 use AymanAlhattami\FilamentAudioVideoPlayer\Form\AudioPlayer;
 use AymanAlhattami\FilamentAudioVideoPlayer\Form\YoutubeVideoPlayer;
 use AymanAlhattami\FilamentAudioVideoPlayer\Form\ViemoVideoPlayer;
-
+// ...
 public static function form(Form $form): Form
 {
     return $form
@@ -35,6 +35,7 @@ public static function form(Form $form): Form
             // ...
         ]);
 }
+// ...
 ```
 
 ### Table Column
@@ -44,20 +45,39 @@ use AymanAlhattami\FilamentAudioVideoPlayer\Table\VideoPlayerColumn;
 use AymanAlhattami\FilamentAudioVideoPlayer\Table\AudioPlayerColumn;
 use AymanAlhattami\FilamentAudioVideoPlayer\Table\YoutubeVideoPlayerColumn;
 use AymanAlhattami\FilamentAudioVideoPlayer\Table\VimeoVideoPlayerColumn;
-
+// ...
 public static function table(Table $table): Table
 {
     return $table
         ->columns([
-            //...
+            // ...
             VideoVideoPlayerColumnPlayer::make('video_url'),
             AudioPlayerColumn::make('audio_url'),
             YoutubeVideoPlayerColumn::make('youtube_video_url'),
             VimeoVideoPlayerColumn::make('vimeo_video_url'),
-            //...
+            // ...
         ])
         // ...
 }
+// ...
+```
+
+### More Options
+If you want to change any design of the player, you can do so using [plyr CSS customizing](https://github.com/sampotts/plyr#customizing-the-css)
+```php
+VideoPlayer::make('video_url')
+    ->setCss([
+        '--plyr-color-main' => '#eab308'
+    ])
+```
+
+If you want to set any configuration for the player, you can do so using [plyr optoins](https://github.com/sampotts/plyr#options)
+```php
+VideoPlayer::make('video_url')
+    ->setOptions([
+        "settings" => [],
+        'controls' => ['play-large', 'play', 'fullscreen']
+    ])
 ```
 
 ### Changelog
