@@ -64,8 +64,13 @@ trait WithAudioVideoPlayer
                         }else{
                             $string .= $innerValue;
                         }
+
+                        $string .= ",";
                     }
                 }
+
+                $string = trim($string, ',');
+
                 $config .= Str::of($config)->append('"' . $key . '"' . ': [' . $string . '],');
             } elseif (is_bool($value)) {
                 if ($value) {
