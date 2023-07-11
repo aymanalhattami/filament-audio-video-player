@@ -2,7 +2,7 @@
     data-plyr-config='{
         {{ $getConfigAsString() }}
     }'
-    class="js-player"
+    class="js-plyr"
     controls>
     <source src="{{ $getState() }}"
         type="audio/mp3" />

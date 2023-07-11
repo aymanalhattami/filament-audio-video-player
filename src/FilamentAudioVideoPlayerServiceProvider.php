@@ -34,7 +34,7 @@ class FilamentAudioVideoPlayerServiceProvider extends PluginServiceProvider
             callback: fn () => new HtmlString(html: "
                 <script src='https://cdn.plyr.io/3.7.8/plyr.polyfilled.js'></script>
                 <script>
-                    Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p));
+                    Array.from(document.querySelectorAll('.js-plyr')).map((p) => new Plyr(p));
                 </script>
             ")
         );

@@ -2,7 +2,7 @@
     data-plyr-config='{
         {{ $getConfigAsString() }}
     }'
-    class="js-player"
+    class="js-plyr"
     playsinline
     controls>
     <source src="{{ $getState() }}"

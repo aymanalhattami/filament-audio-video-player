@@ -16,7 +16,7 @@
             {{ $getConfigAsString() }}
         }'
         controls
-        class="js-player"
+        class="js-plyr"
         crossorigin
         playsinline>
         <source src="{{ $getState() }}"
