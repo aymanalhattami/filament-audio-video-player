@@ -3,7 +3,12 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/aymanalhattami/filament-audio-video-player.svg?style=flat-square)](https://packagist.org/packages/aymanalhattami/filament-audio-video-player)
 [![Total Downloads](https://img.shields.io/packagist/dt/aymanalhattami/filament-audio-video-player.svg?style=flat-square)](https://packagist.org/packages/aymanalhattami/filament-audio-video-player)
 
-Filament Audio Video Player using [plyr]( https://github.com/sampotts/plyr) JavaScript library
+Filament Audio Video Player using [plyr]( https://github.com/sampotts/plyr) JavaScript library. It supports HTML Video & Audio, YouTube & Vimeo.
+
+> Plyr is a simple, lightweight, accessible and customizable HTML5, YouTube and Vimeo media player that supports modern browsers.
+>
+
+
 
 ## Installation
 
